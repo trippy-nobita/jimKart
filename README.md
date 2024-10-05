@@ -1,2 +1,2 @@
 # pulp
-This is my first business to become millionaire.
+You will get to know soon.

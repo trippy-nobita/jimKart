@@ -15,7 +15,7 @@ connectDB().then(r => {
 
   // Define a default route to test server response
   app.get('/', (req, res) => {
-    res.send('API is running...');
+    res.send('API is working...');
   });
 
   const PORT = process.env.PORT || 5000;

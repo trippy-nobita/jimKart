@@ -10,8 +10,8 @@ const cartSchema = new Schema({
 
     items: [
         {
-            productName: {
-                type: String,
+            gymId: {
+                type: mongoose.Schema.Types.ObjectId,
                 required: true,
             },
             productId: {

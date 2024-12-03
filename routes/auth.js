@@ -6,6 +6,10 @@ const User = require('../db/models/User');
 
 const router = express.Router();
 
+const generateUserId = () => {
+  return Math.floor(100000 + Math.random() * 900000).toString();
+}
+
 router.post(
   '/signup',
   [
@@ -26,7 +30,13 @@ router.post(
         return res.status(400).json({msg: 'User already exists'});
       }
 
-      user = new User ({name, email, password});
+      let userId = generateUserId();
+
+      while (await User.findOne({userId})) {
+        userId = generateUserId();
+      }
+
+      user = new User ({name, email, password, userId});
 
       //Hash password
       const salt = await bcrypt.genSalt(10);
@@ -34,14 +44,15 @@ router.post(
 
       await user.save();
 
-      const payload = {user : {id: user.id}};
+      const payload = {user : {id: user._id}};
       jwt.sign (
         payload,
         process.env.JWT_SECRET,
         {expiresIn: 3600},
         (err, token) => {
           if (err) throw err;
-          res.json({token});
+          res.json({token,
+          userId: user.userId});
         });
     }
     catch (err) {

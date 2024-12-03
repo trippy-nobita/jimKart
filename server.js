@@ -7,11 +7,16 @@ dotenv.config();
 connectDB().then(r => {
   const app = express();
 
-//Init Middleware
-  app.use(express.json({extended: false}));
+  //Init Middleware
+  app.use(express.json({extended: false})); // Parse JSON requests
 
-  app.use('/api.auth', require('./routes/auth'));
-  app.use('/api.protected', require('./routes/protected'));
+  app.use('/api', require('./routes/auth')); // Authentication routes
+  app.use('/api', require('./routes/protected')); // Protected routes
+
+  // Define a default route to test server response
+  app.get('/', (req, res) => {
+    res.send('API is running...');
+  });
 
   const PORT = process.env.PORT || 5000;
 

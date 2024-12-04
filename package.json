@@ -1,5 +1,5 @@
 {
-  "name": "pulp",
+  "name": "jimKart",
   "version": "1.0.0",
   "description": "You will get to know",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trippy-nobita/pulp.git"
+    "url": "git+https://github.com/trippy-nobita/jimKart.git"
   },
   "author": "trippy-nobita",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/trippy-nobita/pulp/issues"
+    "url": "https://github.com/trippy-nobita/jmkart/issues"
   },
-  "homepage": "https://github.com/trippy-nobita/pulp#readme",
+  "homepage": "https://github.com/trippy-nobita/jimKart#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",

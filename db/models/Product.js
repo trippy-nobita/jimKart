@@ -3,7 +3,7 @@ const {Schema} = mongoose;
 
 const productSchema = new Schema({
   gymId: {
-    gymId: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: true
   },
   price: {

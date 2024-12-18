@@ -10,11 +10,7 @@ const cartSchema = new Schema({
 
     items: [
         {
-            gymId: {
-                type: mongoose.Schema.Types.ObjectId,
-                required: true,
-            },
-            quantity: {
+            days: {
                 type: Number,
                 require: true,
                 default: 1,

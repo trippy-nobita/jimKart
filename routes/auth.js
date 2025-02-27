@@ -10,6 +10,18 @@ const generateUserId = () => {
   return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
+if (!process.env.JWT_SECRET) {
+  throw new Error('Missing JWT_SECRET in environment variables');
+}
+
+// Token expiration duration (configurable)
+const TOKEN_EXPIRY = process.env.JWT_EXPIRY || '1h';
+
+/**
+ * @route    POST /api/signup
+ * @desc     User signup
+ * @access   Public
+ */
 router.post(
   '/signup',
   [

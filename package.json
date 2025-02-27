@@ -1,5 +1,5 @@
 {
-  "name": "jimKart",
+  "name": "jimkart",
   "version": "1.0.0",
   "description": "You will get to know",
   "main": "index.js",
@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/trippy-nobita/jimKart#readme",
   "dependencies": {
+    "axios": "^1.7.9",
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
-    "eslint": "^9.12.0",
     "express": "^4.21.0",
     "express-validator": "^7.2.0",
     "jsonwebtoken": "^9.0.2",
